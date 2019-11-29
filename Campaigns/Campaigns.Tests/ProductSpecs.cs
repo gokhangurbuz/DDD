@@ -45,6 +45,8 @@ namespace Campaigns.Tests
         [Fact]
         public void Check_product_discountPrice_when_campaign_created()
         {
+            _systemInfo.ResetSystemTime();
+
             _product.Create(new ProductItem(new ProductCode("P2"), 3, 4));
             _campaign.Create(new CampaignItem("C2", new ProductCode("P2"), 5, 5, 100));
             _systemInfo.IncreaseSystemTime(1);
